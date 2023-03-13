@@ -1,5 +1,146 @@
-@use 'font-face' as *;
 @use 'root' as *;
 @use 'reset' as *;
 @use 'functions' as *;
 @use 'mixins' as *;
+
+body {
+  font-family: var(--ff-karla);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-block-size: 100vh;
+
+  padding-inline: 2rem;
+
+  background-color: var(--clr-light-gray);
+}
+
+.pricing {
+  max-inline-size: rem(635);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.community {
+  grid-column: span 2;
+
+  padding-block: rem(40);
+  padding-inline: rem(40);
+
+  background-color: white;
+
+  &__title {
+    margin-block-end: rem(24);
+
+    font-size: rem(24);
+    font-weight: 700;
+    color: var(--clr-cyan);
+  }
+
+  &__lead {
+    margin-block-end: rem(12);
+
+    font-size: rem(18);
+    font-weight: 700;
+    color: var(--clr-bright-yellow);
+  }
+
+  &__text {
+    color: var(--clr-grayish-blue);
+  }
+}
+
+.subscription {
+  padding-block: rem(40);
+  padding-inline: rem(40);
+
+  background-color: var(--clr-cyan);
+
+  &__title {
+    margin-block-end: rem(18);
+
+    font-size: rem(18);
+    font-weight: 700;
+    color: white;
+  }
+
+  &__price {
+    margin-block-end: rem(8);
+
+    font-size: rem(32);
+    font-weight: 700;
+    color: white;
+
+    span {
+      font-size: 1rem;
+      color: white;
+      filter: opacity(50%);
+    }
+  }
+
+  &__text {
+    margin-block-end: rem(26);
+
+    color: white;
+  }
+}
+
+.button {
+  display: block;
+
+  padding-block: rem(15);
+  padding-inline: rem(88);
+
+  background-color: var(--clr-bright-yellow);
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.0973011);
+
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.why-us {
+  padding-block: rem(40);
+  padding-inline: rem(40);
+
+  background-color: var(--clr-cyan-light);
+
+  &__title {
+    margin-block-end: rem(18);
+
+    font-size: rem(18);
+    font-weight: 700;
+    color: white;
+  }
+}
+
+.features {
+  font-size: rem(14);
+  color: white;
+  filter: opacity(75%);
+}
+
+@media screen and (max-width: 635px) {
+  .pricing {
+    grid-template-columns: 1fr;
+  }
+
+  .community {
+    padding-inline: rem(24);
+    grid-column: initial;
+  }
+
+  .subscription {
+    padding-inline: rem(24);
+  }
+
+  .why-us {
+    padding-inline: rem(24);
+  }
+}
